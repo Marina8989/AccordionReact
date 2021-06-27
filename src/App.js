@@ -7,13 +7,18 @@ function App() {
     const [lists, setLists] = useState(questions);
     
     return (
-        <div>
-            {lists.map(list => {
-                return (
-                    <Question key={list.id} {...list}></Question>
-                )
-            })}
-        </div>
+       <main>
+           <div className="container">
+               <h3>questions and answers about login</h3>
+               <section className="info">
+                  {lists.map(list => {
+                      return (
+                          <Question key={list.id} {...list}></Question>
+                      )
+                  })}
+               </section>
+           </div>
+       </main>
     )
 }
 
