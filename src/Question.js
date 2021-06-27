@@ -12,7 +12,9 @@ const Question = () => {
                 return (
                     <div key={id}>
                        <h4>{title}</h4>
-                       <h5>{info}</h5>
+                       <h5>{loading ? info : ''} 
+                       <button type="button" onClick={() => setLoading(!loading)}>{loading ? "+" : "-"}</button>
+                       </h5>
                     </div>
                 )
             })}
