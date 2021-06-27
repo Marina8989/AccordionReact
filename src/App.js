@@ -1,10 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Question from './Question';
+import questions from './data';
+
 
 function App() {
+    const [lists, setLists] = useState(questions);
+    
     return (
         <div>
-            <Question />
+            {lists.map(list => {
+                return (
+                    <Question key={list.id} {...list}></Question>
+                )
+            })}
         </div>
     )
 }
